@@ -12,7 +12,7 @@ class Connector:
     def response(self, city=None):
         if city is None:
             res = requests.get("http://ip-api.com/json/")
-            city = res.json().get["city", "'London"]
+            city = res.json().get("city", "London")
         
         response = requests.get(self.url(city))
         response = response.json()
